@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameVerse - Your Ultimate Gaming Hub</title>
+    <title>GameVerse - Play Online Games</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,8 +24,8 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Welcome to GameVerse</h1>
-            <p>Discover the best games, reviews, and gaming news all in one place</p>
-            <button class="cta-button" onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">Explore Games</button>
+            <p>Play the most addictive games online - Slope, Geometry Dash, and more!</p>
+            <button class="cta-button" onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">Play Games</button>
         </div>
     </section>
 
@@ -37,10 +37,34 @@
         </div>
     </section>
 
+    <!-- Game Modal -->
+    <div id="gameModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="game-view">
+                <div class="game-header">
+                    <h2 id="modalGameTitle"></h2>
+                    <div class="game-stats">
+                        <span id="scoreDisplay">Score: 0</span>
+                        <span id="highScoreDisplay">High Score: 0</span>
+                    </div>
+                </div>
+                <div id="gameCanvas" class="game-canvas-container">
+                    <!-- Game will be embedded here -->
+                </div>
+                <div class="game-controls">
+                    <button id="playBtn" class="play-btn">Start Game</button>
+                    <button id="pauseBtn" class="pause-btn hidden">Pause</button>
+                    <button id="resetBtn" class="reset-btn">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- About Section -->
     <section id="about" class="about-section">
         <h2>About GameVerse</h2>
-        <p>GameVerse is your ultimate destination for gaming news, reviews, and community. We cover all platforms: PC, Console, and Mobile gaming. Join thousands of gamers discovering their next favorite game.</p>
+        <p>GameVerse is your ultimate destination for free online games. Play fast-paced action games like Slope and Geometry Dash, strategy games, and more. Compete with friends, beat high scores, and enjoy endless gaming fun!</p>
     </section>
 
     <!-- Contact Section -->
