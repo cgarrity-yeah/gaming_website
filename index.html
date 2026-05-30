@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameVerse - Play Online Games</title>
+    <title>GameVerse - Ultimate Gaming Platform</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,8 +14,8 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#games">Games</a></li>
+                <li><a href="#leaderboard">Leaderboard</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -23,15 +23,15 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Welcome to GameVerse</h1>
-            <p>Play the most addictive games online - Slope, Geometry Dash, and more!</p>
-            <button class="cta-button" onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">Play Games</button>
+            <h1>🎮 Welcome to GameVerse</h1>
+            <p>Experience the ultimate collection of addictive arcade games</p>
+            <button class="cta-button" onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">Play Now</button>
         </div>
     </section>
 
     <!-- Games Library Section -->
     <section id="games" class="games-section">
-        <h2>Featured Games</h2>
+        <h2>🎯 Featured Games</h2>
         <div class="games-container" id="gamesContainer">
             <!-- Games will be populated by JavaScript -->
         </div>
@@ -46,41 +46,40 @@
                     <h2 id="modalGameTitle"></h2>
                     <div class="game-stats">
                         <span id="scoreDisplay">Score: 0</span>
-                        <span id="highScoreDisplay">High Score: 0</span>
+                        <span id="highScoreDisplay">Best: 0</span>
+                        <span id="livesDisplay" class="hidden">Lives: 3</span>
                     </div>
                 </div>
                 <div id="gameCanvas" class="game-canvas-container">
                     <!-- Game will be embedded here -->
                 </div>
+                <div class="game-info" id="gameInfo"></div>
                 <div class="game-controls">
-                    <button id="playBtn" class="play-btn">Start Game</button>
-                    <button id="pauseBtn" class="pause-btn hidden">Pause</button>
-                    <button id="resetBtn" class="reset-btn">Reset</button>
+                    <button id="playBtn" class="play-btn">▶ Start Game</button>
+                    <button id="pauseBtn" class="pause-btn hidden">⏸ Pause</button>
+                    <button id="resetBtn" class="reset-btn">🔄 Reset</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="leaderboard-section">
+        <h2>🏆 Global Leaderboard</h2>
+        <div class="leaderboard-container" id="leaderboardContainer">
+            <!-- Leaderboard will be populated -->
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="about-section">
         <h2>About GameVerse</h2>
-        <p>GameVerse is your ultimate destination for free online games. Play fast-paced action games like Slope and Geometry Dash, strategy games, and more. Compete with friends, beat high scores, and enjoy endless gaming fun!</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2>Get In Touch</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+        <p>GameVerse is a free gaming platform featuring classic and modern arcade games. Play Slope, Geometry Dash, Flappy Bird, Snake, and Space Invaders - all optimized for maximum fun!</p>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 GameVerse. All rights reserved. Made with ❤️ for gamers.</p>
+        <p>&copy; 2025 GameVerse. Made with ❤️ for gamers worldwide.</p>
     </footer>
 
     <script src="script.js"></script>
