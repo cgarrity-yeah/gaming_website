@@ -250,6 +250,12 @@ class SlopeGame {
         this.slopeAngle = 0.15;
         this.gameSpeed = 2;
         
+        // Load ball image
+        this.ballImage = new Image();
+        this.ballImage.src = 'https://via.placeholder.com/16/ff6b6b/ffffff?text=●';
+        this.ballLoaded = false;
+        this.ballImage.onload = () => { this.ballLoaded = true; };
+        
         this.setupControls();
         this.generateObstacles();
         updateScore();
@@ -780,12 +786,18 @@ class GeometryDashGame {
             this.player.rotation = 0;
         }
         
-        // Draw player
+        // Draw player - Colorful gradient square
         this.ctx.save();
         this.ctx.translate(this.player.x + this.player.width / 2, this.player.y + this.player.height / 2);
         this.ctx.rotate(this.player.rotation);
-        this.ctx.fillStyle = '#ff6b6b';
+        
+        // Gradient fill
+        const playerGrad = this.ctx.createLinearGradient(-this.player.width/2, -this.player.height/2, this.player.width/2, this.player.height/2);
+        playerGrad.addColorStop(0, '#ff6b6b');
+        playerGrad.addColorStop(1, '#ff9100');
+        this.ctx.fillStyle = playerGrad;
         this.ctx.fillRect(-this.player.width / 2, -this.player.height / 2, this.player.width, this.player.height);
+        
         this.ctx.restore();
         
         // Generate obstacles
@@ -874,6 +886,12 @@ class FlappyBirdGame {
         this.pipeSpeed = 4;
         this.frameCount = 0;
         this.bgOffset = 0;
+        
+        // Load bird image
+        this.birdImage = new Image();
+        this.birdImage.src = 'https://via.placeholder.com/30/FFD700/000000?text=🐦';
+        this.birdLoaded = false;
+        this.birdImage.onload = () => { this.birdLoaded = true; };
         
         this.setupControls();
         updateScore();
@@ -1335,7 +1353,7 @@ class SpaceInvadersGame {
         if (this.player.x < 0) this.player.x = 0;
         if (this.player.x + this.player.width > this.canvas.width) this.player.x = this.canvas.width - this.player.width;
         
-        // Draw player
+        // Draw player - Triangle ship
         this.ctx.fillStyle = '#00d84f';
         this.ctx.beginPath();
         this.ctx.moveTo(this.player.x + this.player.width / 2, this.player.y);
@@ -1356,7 +1374,7 @@ class SpaceInvadersGame {
         this.enemies.forEach((enemy, i) => {
             enemy.x += enemy.velocityX;
             
-            // Draw enemy
+            // Draw enemy - Circle with face
             this.ctx.fillStyle = '#ff6b6b';
             this.ctx.beginPath();
             this.ctx.arc(enemy.x + enemy.width / 2, enemy.y + enemy.height / 2, 15, 0, Math.PI * 2);
